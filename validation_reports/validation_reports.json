@@ -1,0 +1,185 @@
+{
+  "success": true,
+  "meta": {
+    "great_expectations_version": "0.18.19",
+    "source_schema": "employee_management",
+    "destination_schema": "contractor_management",
+    "timestamp": "2025-04-30T13:46:12.109334"
+  },
+  "results": [
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "assetsassigned"
+      },
+      "meta": {
+        "column_results": [
+          "\u2705 Column 'asset_id' matches with datatype: INT PRIMARY KEY",
+          "\u2705 Column 'asset_name' matches with datatype: VARCHAR(100)",
+          "\u2705 Column 'assigned_date' matches with datatype: DATE",
+          "\u274c Column 'contractor_id' is missing in employee_management",
+          "\u274c Column 'employee_id' is missing in contractor_management"
+        ],
+        "status": "\u2705"
+      },
+      "success": true
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "attendance"
+      },
+      "meta": {
+        "column_results": [
+          "\u2705 Column 'attendance_date' matches with datatype: DATE",
+          "\u2705 Column 'attendance_id' matches with datatype: INT PRIMARY KEY",
+          "\u274c Column 'contractor_id' is missing in employee_management",
+          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u2705 Column 'status' matches with datatype: VARCHAR(20)"
+        ],
+        "status": "\u2705"
+      },
+      "success": true
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "contractor"
+      },
+      "meta": {
+        "column_results": []
+      }
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "department"
+      },
+      "meta": {
+        "column_results": [
+          "\u2705 Column 'department_id' matches with datatype: INT PRIMARY KEY",
+          "\u2705 Column 'location' matches with datatype: VARCHAR(100)",
+          "\u2705 Column 'name' matches with datatype: VARCHAR(100)"
+        ],
+        "status": "\u2705"
+      },
+      "success": true
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "emergencycontacts"
+      },
+      "meta": {
+        "column_results": [
+          "\u2705 Column 'contact_id' matches with datatype: INT PRIMARY KEY",
+          "\u2705 Column 'contact_name' matches with datatype: VARCHAR(100)",
+          "\u274c Column 'contractor_id' is missing in employee_management",
+          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u2705 Column 'phone_number' matches with datatype: VARCHAR(20)",
+          "\u2705 Column 'relation' matches with datatype: VARCHAR(50)"
+        ],
+        "status": "\u2705"
+      },
+      "success": true
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "employee"
+      },
+      "meta": {
+        "column_results": []
+      }
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "leaverequests"
+      },
+      "meta": {
+        "column_results": [
+          "\u274c Column 'contractor_id' is missing in employee_management",
+          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u2705 Column 'end_date' matches with datatype: DATE",
+          "\u2705 Column 'leave_id' matches with datatype: INT PRIMARY KEY",
+          "\u2705 Column 'leave_type' matches with datatype: VARCHAR(50)",
+          "\u2705 Column 'start_date' matches with datatype: DATE",
+          "\u2705 Column 'status' matches with datatype: VARCHAR(20)"
+        ],
+        "status": "\u2705"
+      },
+      "success": true
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "payroll"
+      },
+      "meta": {
+        "column_results": [
+          "\u2705 Column 'amount' matches with datatype: DECIMAL(10",
+          "\u274c Column 'contractor_id' is missing in employee_management",
+          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u2705 Column 'payment_date' matches with datatype: DATE",
+          "\u2705 Column 'payroll_id' matches with datatype: INT PRIMARY KEY"
+        ],
+        "status": "\u2705"
+      },
+      "success": true
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "performancereviews"
+      },
+      "meta": {
+        "column_results": [
+          "\u2705 Column 'comments' matches with datatype: TEXT",
+          "\u274c Column 'contractor_id' is missing in employee_management",
+          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u2705 Column 'review_date' matches with datatype: DATE",
+          "\u2705 Column 'review_id' matches with datatype: INT PRIMARY KEY",
+          "\u2705 Column 'score' matches with datatype: INT"
+        ],
+        "status": "\u2705"
+      },
+      "success": true
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "trainingrecords"
+      },
+      "meta": {
+        "column_results": [
+          "\u2705 Column 'completed_date' matches with datatype: DATE",
+          "\u274c Column 'contractor_id' is missing in employee_management",
+          "\u2705 Column 'course_name' matches with datatype: VARCHAR(100)",
+          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u2705 Column 'training_id' matches with datatype: INT PRIMARY KEY"
+        ],
+        "status": "\u2705"
+      },
+      "success": true
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "transactionhistory_contractor"
+      },
+      "meta": {
+        "column_results": []
+      }
+    },
+    {
+      "expectation_type": "expect_table_schema_to_match",
+      "kwargs": {
+        "table": "transactionhistory_employee"
+      },
+      "meta": {
+        "column_results": []
+      }
+    }
+  ]
+}

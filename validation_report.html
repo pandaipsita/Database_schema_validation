@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Schema Validation Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .meta-info {
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      margin-bottom: 5px;
+    }
+    .meta-label {
+      font-weight: bold;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: left;
+    }
+    td {
+      padding: 10px;
+      vertical-align: top;
+      background-color: #fff;
+    }
+    .table-row td {
+      background-color: #fff7db;
+    }
+    .failed td {
+      background-color: #f8d7da;
+    }
+    .success-details {
+      color: green;
+    }
+    .error-details {
+      color: red;
+    }
+    .details-title {
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    .status-success {
+      color: green;
+    }
+    .status-failed {
+      color: red;
+    }
+    .statistics {
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #e9f7ef;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Schema Validation Report</h1>
+
+  <div class="meta-info">
+    <div class="meta-row"><span class="meta-label">Great Expectations Version:</span> 0.18.19</div>
+    <div class="meta-row"><span class="meta-label">Source Schema:</span> employee_management</div>
+    <div class="meta-row"><span class="meta-label">Destination Schema:</span> contractor_management</div>
+    <div class="meta-row"><span class="meta-label">Timestamp:</span> 2025-04-25T13:52:04.683107</div>
+  </div>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Table</th>
+        <th>Status</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-row">
+        <td rowspan="2">assetsassigned</td>
+        <td rowspan="2" class="status-success">✅ Success</td>
+        <td class="success-details">
+          <div class="details-title">✅ Success:</div>
+          ✅ Column 'asset_id' matches with datatype: INT PRIMARY KEY<br>
+          ✅ Column 'asset_name' matches with datatype: VARCHAR(100)<br>
+          ✅ Column 'assigned_date' matches with datatype: DATE
+        </td>
+      </tr>
+      <tr class="failed">
+        <td class="error-details">
+          <div class="details-title">❌ Missing:</div>
+          ❌ Column 'contractor_id' is missing in employee_management<br>
+          ❌ Column 'employee_id' is missing in contractor_management
+        </td>
+      </tr>
+
+      <tr class="table-row">
+        <td rowspan="2">attendance</td>
+        <td rowspan="2" class="status-success">✅ Success</td>
+        <td class="success-details">
+          <div class="details-title">✅ Success:</div>
+          ✅ Column 'attendance_date' matches with datatype: DATE<br>
+          ✅ Column 'attendance_id' matches with datatype: INT PRIMARY KEY<br>
+          ✅ Column 'status' matches with datatype: VARCHAR(20)
+        </td>
+      </tr>
+      <tr class="failed">
+        <td class="error-details">
+          <div class="details-title">❌ Missing:</div>
+          ❌ Column 'contractor_id' is missing in employee_management<br>
+          ❌ Column 'employee_id' is missing in contractor_management
+        </td>
+      </tr>
+
+      <tr class="failed">
+        <td>contractor</td>
+        <td class="status-failed">❌ Failed</td>
+        <td class="error-details">❌ Table missing</td>
+      </tr>
+
+      <tr class="table-row">
+        <td>department</td>
+        <td class="status-success">✅ Success</td>
+        <td class="success-details">
+          <div class="details-title">✅ Success:</div>
+          ✅ Column 'department_id' matches with datatype: INT PRIMARY KEY<br>
+          ✅ Column 'location' matches with datatype: VARCHAR(100)<br>
+          ✅ Column 'name' matches with datatype: VARCHAR(100)
+        </td>
+      </tr>
+
+      <tr class="table-row">
+        <td rowspan="2">emergencycontacts</td>
+        <td rowspan="2" class="status-success">✅ Success</td>
+        <td class="success-details">
+          <div class="details-title">✅ Success:</div>
+          ✅ Column 'contact_id' matches with datatype: INT PRIMARY KEY<br>
+          ✅ Column 'contact_name' matches with datatype: VARCHAR(100)<br>
+          ✅ Column 'phone_number' matches with datatype: VARCHAR(20)<br>
+          ✅ Column 'relation' matches with datatype: VARCHAR(50)
+        </td>
+      </tr>
+      <tr class="failed">
+        <td class="error-details">
+          <div class="details-title">❌ Missing:</div>
+          ❌ Column 'contractor_id' is missing in employee_management<br>
+          ❌ Column 'employee_id' is missing in contractor_management
+        </td>
+      </tr>
+
+      <tr class="failed">
+        <td>employee</td>
+        <td class="status-failed">❌ Failed</td>
+        <td class="error-details">❌ Table missing</td>
+      </tr>
+
+      <tr class="table-row">
+        <td rowspan="2">leaverequests</td>
+        <td rowspan="2" class="status-success">✅ Success</td>
+        <td class="success-details">
+          <div class="details-title">✅ Success:</div>
+          ✅ Column 'end_date' matches with datatype: DATE<br>
+          ✅ Column 'leave_id' matches with datatype: INT PRIMARY KEY<br>
+          ✅ Column 'leave_type' matches with datatype: VARCHAR(50)<br>
+          ✅ Column 'start_date' matches with datatype: DATE<br>
+          ✅ Column 'status' matches with datatype: VARCHAR(20)
+        </td>
+      </tr>
+      <tr class="failed">
+        <td class="error-details">
+          <div class="details-title">❌ Missing:</div>
+          ❌ Column 'contractor_id' is missing in employee_management<br>
+          ❌ Column 'employee_id' is missing in contractor_management
+        </td>
+      </tr>
+
+      <tr class="table-row">
+        <td rowspan="2">payroll</td>
+        <td rowspan="2" class="status-success">✅ Success</td>
+        <td class="success-details">
+          <div class="details-title">✅ Success:</div>
+          ✅ Column 'amount' matches with datatype: DECIMAL(10)<br>
+          ✅ Column 'payment_date' matches with datatype: DATE<br>
+          ✅ Column 'payroll_id' matches with datatype: INT PRIMARY KEY
+        </td>
+      </tr>
+      <tr class="failed">
+        <td class="error-details">
+          <div class="details-title">❌ Missing:</div>
+          ❌ Column 'contractor_id' is missing in employee_management<br>
+          ❌ Column 'employee_id' is missing in contractor_management
+        </td>
+      </tr>
+
+      <tr class="table-row">
+        <td rowspan="2">performancereviews</td>
+        <td rowspan="2" class="status-success">✅ Success</td>
+        <td class="success-details">
+          <div class="details-title">✅ Success:</div>
+          ✅ Column 'comments' matches with datatype: TEXT<br>
+          ✅ Column 'review_date' matches with datatype: DATE<br>
+          ✅ Column 'review_id' matches with datatype: INT PRIMARY KEY<br>
+          ✅ Column 'score' matches with datatype: INT
+        </td>
+      </tr>
+      <tr class="failed">
+        <td class="error-details">
+          <div class="details-title">❌ Missing:</div>
+          ❌ Column 'contractor_id' is missing in employee_management<br>
+          ❌ Column 'employee_id' is missing in contractor_management
+        </td>
+      </tr>
+
+      <tr class="table-row">
+        <td rowspan="2">trainingrecords</td>
+        <td rowspan="2" class="status-success">✅ Success</td>
+        <td class="success-details">
+          <div class="details-title">✅ Success:</div>
+          ✅ Column 'completed_date' matches with datatype: DATE<br>
+          ✅ Column 'course_name' matches with datatype: VARCHAR(100)<br>
+          ✅ Column 'training_id' matches with datatype: INT PRIMARY KEY
+        </td>
+      </tr>
+      <tr class="failed">
+        <td class="error-details">
+          <div class="details-title">❌ Missing:</div>
+          ❌ Column 'contractor_id' is missing in employee_management<br>
+          ❌ Column 'employee_id' is missing in contractor_management
+        </td>
+      </tr>
+
+      <tr class="failed">
+        <td>transactionhistory_contractor</td>
+        <td class="status-failed">❌ Failed</td>
+        <td class="error-details">❌ Table missing</td>
+      </tr>
+
+      <tr class="failed">
+        <td>transactionhistory_employee</td>
+        <td class="status-failed">❌ Failed</td>
+        <td class="error-details">❌ Table missing</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
