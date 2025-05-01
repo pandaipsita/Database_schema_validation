@@ -4,3 +4,6 @@ chunk_size: 500
 data_directory: ./schema_validation/
 embedding_model: nomic-embed-text
 ge_dir: ./great_expectations
+schemas:
+  - employee_management
+  - contractor_management

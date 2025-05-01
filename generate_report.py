@@ -46,15 +46,11 @@ def main():
 
     print(f"🧠 Total schemas extracted: {len(all_schemas)}")
 
-    # Explicitly define schema names
-    schema1 = "employee_management"
-    schema2 = "contractor_management"
+    # Load schema names from config
+    schema_names = config.get("schemas", [])
 
-    schema_names = [schema1, schema2]  # Use the variables for schema names
-
-    # Ensure we have both schemas
     if len(schema_names) != 2:
-        print(f"⚠️ Missing one or both of the required schemas ({schema1}, {schema2})")
+        print(f"⚠️ Missing one or both of the required schemas in config.yaml")
         available_schemas = list(dataframes.keys())
         if len(available_schemas) >= 2:
             print(f"Using available schemas instead: {available_schemas[0]}, {available_schemas[1]}")
@@ -62,6 +58,8 @@ def main():
         else:
             print(f"⚠️ Need at least two schema files to generate comparison report")
             return
+
+    schema1, schema2 = schema_names
 
     # Step 2: Generate and count chunks
     chunks = chunk_tables(all_schemas)
@@ -76,21 +74,21 @@ def main():
 
     # Generate validation report
     if len(schema_names) >= 2:
-        print(f"Comparing schemas: {schema_names[0]} (source) and {schema_names[1]} (destination)")
+        print(f"Comparing schemas: {schema1} (source) and {schema2} (destination)")
 
-        df1 = dataframes[schema_names[0]]
-        df2 = dataframes[schema_names[1]]
+        df1 = dataframes[schema1]
+        df2 = dataframes[schema2]
 
         # Extract DDL strings for comparison
-        schema1_full = "\n".join([schema["ddl"] for schema in all_schemas if schema["schema_name"] == schema_names[0]])
-        schema2_full = "\n".join([schema["ddl"] for schema in all_schemas if schema["schema_name"] == schema_names[1]])
+        schema1_full = "\n".join([schema["ddl"] for schema in all_schemas if schema["schema_name"] == schema1])
+        schema2_full = "\n".join([schema["ddl"] for schema in all_schemas if schema["schema_name"] == schema2])
 
         # Step 5: Generate detailed comparison report
         comparison_report = compare_schemas(
             schema1_full,
             schema2_full,
-            schema1_name=schema_names[0],
-            schema2_name=schema_names[1]
+            schema1_name=schema1,
+            schema2_name=schema2
         )
 
         # Generate a final report in JSON format
@@ -208,12 +206,16 @@ Answer:""",
             break
 
         # Check for schema-specific queries and extract the relevant tables accordingly
-        if "contractor_management" in question.lower():
+        if schema2.lower() in question.lower():
             result = chain.run(facts=json.dumps({"tables": schema2_tables}, indent=2), question=question)
-        elif "employee_management" in question.lower():
+        elif schema1.lower() in question.lower():
             result = chain.run(facts=json.dumps({"tables": schema1_tables}, indent=2), question=question)
         else:
-            result = chain.run(facts=json.dumps({"tables": {source_schema: schema1_tables, destination_schema: schema2_tables}}, indent=2), question=question)
+            result = chain.run(
+                facts=json.dumps({"tables": {source_schema: schema1_tables, destination_schema: schema2_tables}},
+                                 indent=2),
+                question=question
+            )
 
         print("\nAnswer:", result)
 
