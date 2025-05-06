@@ -76,9 +76,9 @@
 
   <div class="meta-info">
     <div class="meta-row"><span class="meta-label">Great Expectations Version:</span> 0.18.19</div>
-    <div class="meta-row"><span class="meta-label">Source Schema:</span> employee_management</div>
-    <div class="meta-row"><span class="meta-label">Destination Schema:</span> contractor_management</div>
-    <div class="meta-row"><span class="meta-label">Timestamp:</span> 2025-04-25T13:52:04.683107</div>
+    <div class="meta-row"><span class="meta-label">Source Schema:</span> employee_management database</div>
+    <div class="meta-row"><span class="meta-label">Destination Schema:</span> contractor_management database</div>
+    <div class="meta-row"><span class="meta-label">Timestamp:</span> 2025-05-06T15:56:32.710323</div>
   </div>
 
   <table border="1">
@@ -90,21 +90,19 @@
       </tr>
     </thead>
     <tbody>
+
       <tr class="table-row">
         <td rowspan="2">assetsassigned</td>
         <td rowspan="2" class="status-success">✅ Success</td>
         <td class="success-details">
           <div class="details-title">✅ Success:</div>
-          ✅ Column 'asset_id' matches with datatype: INT PRIMARY KEY<br>
-          ✅ Column 'asset_name' matches with datatype: VARCHAR(100)<br>
-          ✅ Column 'assigned_date' matches with datatype: DATE
+          ✅ Column 'asset_id' matches with datatype: INT PRIMARY KEY<br>✅ Column 'asset_name' matches with datatype: VARCHAR(100)<br>✅ Column 'assigned_date' matches with datatype: DATE
         </td>
       </tr>
       <tr class="failed">
         <td class="error-details">
           <div class="details-title">❌ Missing:</div>
-          ❌ Column 'contractor_id' is missing in employee_management<br>
-          ❌ Column 'employee_id' is missing in contractor_management
+          ❌ Column 'contractor_id' is missing in employee_management database<br>❌ Column 'employee_id' is missing in contractor_management database
         </td>
       </tr>
 
@@ -113,16 +111,13 @@
         <td rowspan="2" class="status-success">✅ Success</td>
         <td class="success-details">
           <div class="details-title">✅ Success:</div>
-          ✅ Column 'attendance_date' matches with datatype: DATE<br>
-          ✅ Column 'attendance_id' matches with datatype: INT PRIMARY KEY<br>
-          ✅ Column 'status' matches with datatype: VARCHAR(20)
+          ✅ Column 'attendance_date' matches with datatype: DATE<br>✅ Column 'attendance_id' matches with datatype: INT PRIMARY KEY<br>✅ Column 'status' matches with datatype: VARCHAR(20)
         </td>
       </tr>
       <tr class="failed">
         <td class="error-details">
           <div class="details-title">❌ Missing:</div>
-          ❌ Column 'contractor_id' is missing in employee_management<br>
-          ❌ Column 'employee_id' is missing in contractor_management
+          ❌ Column 'contractor_id' is missing in employee_management database<br>❌ Column 'employee_id' is missing in contractor_management database
         </td>
       </tr>
 
@@ -137,9 +132,7 @@
         <td class="status-success">✅ Success</td>
         <td class="success-details">
           <div class="details-title">✅ Success:</div>
-          ✅ Column 'department_id' matches with datatype: INT PRIMARY KEY<br>
-          ✅ Column 'location' matches with datatype: VARCHAR(100)<br>
-          ✅ Column 'name' matches with datatype: VARCHAR(100)
+          ✅ Column 'department_id' matches with datatype: INT PRIMARY KEY<br>✅ Column 'location' matches with datatype: VARCHAR(100)<br>✅ Column 'name' matches with datatype: VARCHAR(100)
         </td>
       </tr>
 
@@ -148,17 +141,13 @@
         <td rowspan="2" class="status-success">✅ Success</td>
         <td class="success-details">
           <div class="details-title">✅ Success:</div>
-          ✅ Column 'contact_id' matches with datatype: INT PRIMARY KEY<br>
-          ✅ Column 'contact_name' matches with datatype: VARCHAR(100)<br>
-          ✅ Column 'phone_number' matches with datatype: VARCHAR(20)<br>
-          ✅ Column 'relation' matches with datatype: VARCHAR(50)
+          ✅ Column 'contact_id' matches with datatype: INT PRIMARY KEY<br>✅ Column 'contact_name' matches with datatype: VARCHAR(100)<br>✅ Column 'phone_number' matches with datatype: VARCHAR(20)<br>✅ Column 'relation' matches with datatype: VARCHAR(50)
         </td>
       </tr>
       <tr class="failed">
         <td class="error-details">
           <div class="details-title">❌ Missing:</div>
-          ❌ Column 'contractor_id' is missing in employee_management<br>
-          ❌ Column 'employee_id' is missing in contractor_management
+          ❌ Column 'contractor_id' is missing in employee_management database<br>❌ Column 'employee_id' is missing in contractor_management database
         </td>
       </tr>
 
@@ -173,18 +162,13 @@
         <td rowspan="2" class="status-success">✅ Success</td>
         <td class="success-details">
           <div class="details-title">✅ Success:</div>
-          ✅ Column 'end_date' matches with datatype: DATE<br>
-          ✅ Column 'leave_id' matches with datatype: INT PRIMARY KEY<br>
-          ✅ Column 'leave_type' matches with datatype: VARCHAR(50)<br>
-          ✅ Column 'start_date' matches with datatype: DATE<br>
-          ✅ Column 'status' matches with datatype: VARCHAR(20)
+          ✅ Column 'end_date' matches with datatype: DATE<br>✅ Column 'leave_id' matches with datatype: INT PRIMARY KEY<br>✅ Column 'leave_type' matches with datatype: VARCHAR(50)<br>✅ Column 'start_date' matches with datatype: DATE<br>✅ Column 'status' matches with datatype: VARCHAR(20)
         </td>
       </tr>
       <tr class="failed">
         <td class="error-details">
           <div class="details-title">❌ Missing:</div>
-          ❌ Column 'contractor_id' is missing in employee_management<br>
-          ❌ Column 'employee_id' is missing in contractor_management
+          ❌ Column 'contractor_id' is missing in employee_management database<br>❌ Column 'employee_id' is missing in contractor_management database
         </td>
       </tr>
 
@@ -193,16 +177,13 @@
         <td rowspan="2" class="status-success">✅ Success</td>
         <td class="success-details">
           <div class="details-title">✅ Success:</div>
-          ✅ Column 'amount' matches with datatype: DECIMAL(10)<br>
-          ✅ Column 'payment_date' matches with datatype: DATE<br>
-          ✅ Column 'payroll_id' matches with datatype: INT PRIMARY KEY
+          ✅ Column 'amount' matches with datatype: DECIMAL(10<br>✅ Column 'payment_date' matches with datatype: DATE<br>✅ Column 'payroll_id' matches with datatype: INT PRIMARY KEY
         </td>
       </tr>
       <tr class="failed">
         <td class="error-details">
           <div class="details-title">❌ Missing:</div>
-          ❌ Column 'contractor_id' is missing in employee_management<br>
-          ❌ Column 'employee_id' is missing in contractor_management
+          ❌ Column 'contractor_id' is missing in employee_management database<br>❌ Column 'employee_id' is missing in contractor_management database
         </td>
       </tr>
 
@@ -211,17 +192,13 @@
         <td rowspan="2" class="status-success">✅ Success</td>
         <td class="success-details">
           <div class="details-title">✅ Success:</div>
-          ✅ Column 'comments' matches with datatype: TEXT<br>
-          ✅ Column 'review_date' matches with datatype: DATE<br>
-          ✅ Column 'review_id' matches with datatype: INT PRIMARY KEY<br>
-          ✅ Column 'score' matches with datatype: INT
+          ✅ Column 'comments' matches with datatype: TEXT<br>✅ Column 'review_date' matches with datatype: DATE<br>✅ Column 'review_id' matches with datatype: INT PRIMARY KEY<br>✅ Column 'score' matches with datatype: INT
         </td>
       </tr>
       <tr class="failed">
         <td class="error-details">
           <div class="details-title">❌ Missing:</div>
-          ❌ Column 'contractor_id' is missing in employee_management<br>
-          ❌ Column 'employee_id' is missing in contractor_management
+          ❌ Column 'contractor_id' is missing in employee_management database<br>❌ Column 'employee_id' is missing in contractor_management database
         </td>
       </tr>
 
@@ -230,16 +207,13 @@
         <td rowspan="2" class="status-success">✅ Success</td>
         <td class="success-details">
           <div class="details-title">✅ Success:</div>
-          ✅ Column 'completed_date' matches with datatype: DATE<br>
-          ✅ Column 'course_name' matches with datatype: VARCHAR(100)<br>
-          ✅ Column 'training_id' matches with datatype: INT PRIMARY KEY
+          ✅ Column 'completed_date' matches with datatype: DATE<br>✅ Column 'course_name' matches with datatype: VARCHAR(100)<br>✅ Column 'training_id' matches with datatype: INT PRIMARY KEY
         </td>
       </tr>
       <tr class="failed">
         <td class="error-details">
           <div class="details-title">❌ Missing:</div>
-          ❌ Column 'contractor_id' is missing in employee_management<br>
-          ❌ Column 'employee_id' is missing in contractor_management
+          ❌ Column 'contractor_id' is missing in employee_management database<br>❌ Column 'employee_id' is missing in contractor_management database
         </td>
       </tr>
 
@@ -254,6 +228,7 @@
         <td class="status-failed">❌ Failed</td>
         <td class="error-details">❌ Table missing</td>
       </tr>
+
     </tbody>
   </table>
 

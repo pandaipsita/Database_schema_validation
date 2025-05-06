@@ -2,9 +2,9 @@
   "success": true,
   "meta": {
     "great_expectations_version": "0.18.19",
-    "source_schema": "employee_management",
-    "destination_schema": "contractor_management",
-    "timestamp": "2025-05-01T20:51:49.376281"
+    "source_schema": "employee_management database",
+    "destination_schema": "contractor_management database",
+    "timestamp": "2025-05-06T15:56:32.710323"
   },
   "results": [
     {
@@ -17,8 +17,8 @@
           "\u2705 Column 'asset_id' matches with datatype: INT PRIMARY KEY",
           "\u2705 Column 'asset_name' matches with datatype: VARCHAR(100)",
           "\u2705 Column 'assigned_date' matches with datatype: DATE",
-          "\u274c Column 'contractor_id' is missing in employee_management",
-          "\u274c Column 'employee_id' is missing in contractor_management"
+          "\u274c Column 'contractor_id' is missing in employee_management database",
+          "\u274c Column 'employee_id' is missing in contractor_management database"
         ],
         "status": "\u2705"
       },
@@ -33,8 +33,8 @@
         "column_results": [
           "\u2705 Column 'attendance_date' matches with datatype: DATE",
           "\u2705 Column 'attendance_id' matches with datatype: INT PRIMARY KEY",
-          "\u274c Column 'contractor_id' is missing in employee_management",
-          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u274c Column 'contractor_id' is missing in employee_management database",
+          "\u274c Column 'employee_id' is missing in contractor_management database",
           "\u2705 Column 'status' matches with datatype: VARCHAR(20)"
         ],
         "status": "\u2705"
@@ -74,8 +74,8 @@
         "column_results": [
           "\u2705 Column 'contact_id' matches with datatype: INT PRIMARY KEY",
           "\u2705 Column 'contact_name' matches with datatype: VARCHAR(100)",
-          "\u274c Column 'contractor_id' is missing in employee_management",
-          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u274c Column 'contractor_id' is missing in employee_management database",
+          "\u274c Column 'employee_id' is missing in contractor_management database",
           "\u2705 Column 'phone_number' matches with datatype: VARCHAR(20)",
           "\u2705 Column 'relation' matches with datatype: VARCHAR(50)"
         ],
@@ -99,8 +99,8 @@
       },
       "meta": {
         "column_results": [
-          "\u274c Column 'contractor_id' is missing in employee_management",
-          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u274c Column 'contractor_id' is missing in employee_management database",
+          "\u274c Column 'employee_id' is missing in contractor_management database",
           "\u2705 Column 'end_date' matches with datatype: DATE",
           "\u2705 Column 'leave_id' matches with datatype: INT PRIMARY KEY",
           "\u2705 Column 'leave_type' matches with datatype: VARCHAR(50)",
@@ -119,8 +119,8 @@
       "meta": {
         "column_results": [
           "\u2705 Column 'amount' matches with datatype: DECIMAL(10",
-          "\u274c Column 'contractor_id' is missing in employee_management",
-          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u274c Column 'contractor_id' is missing in employee_management database",
+          "\u274c Column 'employee_id' is missing in contractor_management database",
           "\u2705 Column 'payment_date' matches with datatype: DATE",
           "\u2705 Column 'payroll_id' matches with datatype: INT PRIMARY KEY"
         ],
@@ -136,8 +136,8 @@
       "meta": {
         "column_results": [
           "\u2705 Column 'comments' matches with datatype: TEXT",
-          "\u274c Column 'contractor_id' is missing in employee_management",
-          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u274c Column 'contractor_id' is missing in employee_management database",
+          "\u274c Column 'employee_id' is missing in contractor_management database",
           "\u2705 Column 'review_date' matches with datatype: DATE",
           "\u2705 Column 'review_id' matches with datatype: INT PRIMARY KEY",
           "\u2705 Column 'score' matches with datatype: INT"
@@ -154,9 +154,9 @@
       "meta": {
         "column_results": [
           "\u2705 Column 'completed_date' matches with datatype: DATE",
-          "\u274c Column 'contractor_id' is missing in employee_management",
+          "\u274c Column 'contractor_id' is missing in employee_management database",
           "\u2705 Column 'course_name' matches with datatype: VARCHAR(100)",
-          "\u274c Column 'employee_id' is missing in contractor_management",
+          "\u274c Column 'employee_id' is missing in contractor_management database",
           "\u2705 Column 'training_id' matches with datatype: INT PRIMARY KEY"
         ],
         "status": "\u2705"
