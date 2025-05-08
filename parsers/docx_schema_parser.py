@@ -1,17 +1,30 @@
 from docx import Document
 import re
 import pandas as pd
+import os
 
 
-def extract_sql_schemas(docx_path):
-    doc = Document(docx_path)
-    full_text = "\n".join([para.text for para in doc.paragraphs])
+def extract_sql_schemas(file_path):
+    # Determine file type by extension
+    file_ext = os.path.splitext(file_path)[1].lower()
 
-    # Extract schema name from document filename
-    import os
-    schema_name = os.path.basename(docx_path).split('.')[0]
+    # Extract schema name from file name (common for all file types)
+    schema_name = os.path.basename(file_path).split('.')[0]
 
-    # Split into individual CREATE TABLE statements
+    # Read file content based on file type
+    if file_ext == '.docx':
+        # Use Document for .docx files
+        doc = Document(file_path)
+        full_text = "\n".join([para.text for para in doc.paragraphs])
+    elif file_ext in ['.txt', '.sql']:
+        # Use standard file reading for .txt and .sql files
+        with open(file_path, 'r') as file:
+            full_text = file.read()
+    else:
+        print(f"Unsupported file type: {file_ext}")
+        return []
+
+    # Split into individual CREATE TABLE statements - common for all file types
     schema_blocks = re.findall(r"(CREATE TABLE[\s\S]+?\);)", full_text, re.IGNORECASE)
 
     cleaned_schemas = []

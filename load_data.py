@@ -9,7 +9,9 @@ with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 data_dir = config["data_directory"]
-files = sorted([f for f in os.listdir(data_dir) if f.endswith(".docx")])
+#files = sorted([f for f in os.listdir(data_dir) if f.endswith(".docx")])
+# Modify this line in load_data.py
+files = sorted([f for f in os.listdir(data_dir) if f.endswith((".docx", ".txt", ".sql"))])
 
 all_schemas = []
 
